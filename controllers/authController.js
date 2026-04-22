@@ -23,8 +23,8 @@ const registerUser = async (req, res) => {
       email,
       password: hashedPassword,
       role,
-      matriculationNumber,
-      department
+      department,
+      ...(matriculationNumber && { matriculationNumber })
     });
 
     // Save user to database
